@@ -19,6 +19,11 @@ repos:
   rev: 054bda51dbe278b3e86f27c890e3f3ac877d616c
   hooks:
     - id: validate-cff
+- repo: https://github.com/sphinx-contrib/sphinx-lint
+  rev: v1.0.0
+  hooks:
+    - id: sphinx-lint
+      args: ["."]
 - repo: https://github.com/lucianopaz/head_of_apache
   rev: "0.0.3"
   hooks:
@@ -30,7 +35,11 @@ repos:
         - --exclude=binder/
         - --exclude=versioneer.py
 - repo: https://github.com/astral-sh/ruff-pre-commit
+<<<<<<< HEAD
   rev: v0.7.0
+=======
+  rev: v0.6.5
+>>>>>>> dbf29b4ec (Enable sphinx-lint pre-commit hook)
   hooks:
     - id: ruff
       args: [--fix, --show-fixes]
