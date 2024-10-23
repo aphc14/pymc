@@ -756,6 +756,7 @@ def fit(
     if isinstance(method, str):
         method = method.lower()
         if method in _select:
+            # NTS: inference = ADVI(model=pm.modelcontext(model), **inf_kwargs)
             inference = _select[method](model=model, **inf_kwargs)
         else:
             raise KeyError(f"method should be one of {set(_select.keys())} or Inference instance")
