@@ -107,7 +107,7 @@ class Inference:
         ----------
         n : int
             number of iterations
-        score : bool
+        score : bool # PFIN ADVI is True, PF can be set to False if needed
             evaluate loss on each iteration or not
         callbacks : list[function: (Approximation, losses, i) -> None]
             calls provided functions after each iteration step
