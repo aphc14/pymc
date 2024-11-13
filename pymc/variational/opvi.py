@@ -387,6 +387,7 @@ class ObjectiveFunction:
             total_grad_norm_constraint=total_grad_norm_constraint,
         )
         seed = self.approx.rng.randint(2**30, dtype=np.int64)
+        # PFIN: understand how compile_pymc is used here followed by step_fn over the iters
         if score:
             step_fn = compile_pymc([], updates.loss, updates=updates, random_seed=seed, **fn_kwargs)
         else:
@@ -756,6 +757,7 @@ class Group(WithMemoization):
             self.__init_group__(self.group)
 
     def _prepare_start(self, start=None):
+        # PFIN: include start parameter?
         ipfn = make_initial_point_fn(
             model=self.model,
             overrides=start,

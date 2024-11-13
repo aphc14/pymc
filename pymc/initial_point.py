@@ -254,7 +254,7 @@ def make_initial_point_expression(
             value = pt.as_tensor(strategy, dtype=variable.dtype).astype(variable.dtype)
 
         transform = rvs_to_transforms.get(variable, None)
-
+        # PFIN: use transform to add value in unconstrained space
         if transform is not None:
             value = transform.forward(value, *variable.owner.inputs)
 

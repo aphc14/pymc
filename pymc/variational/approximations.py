@@ -175,6 +175,7 @@ class FullRankGroup(Group):
 
     @node_property
     def symbolic_logq_not_scaled(self):
+        # PFIN: symbolic calc of unscaled logq
         z0 = self.symbolic_initial
         diag = pt.diagonal(self.L, 0, self.L.ndim - 2, self.L.ndim - 1)
         logdet = pt.log(diag)
@@ -184,6 +185,7 @@ class FullRankGroup(Group):
 
     @node_property
     def symbolic_random(self):
+        # PFIN: symbolic repr of random draws
         initial = self.symbolic_initial
         L = self.L
         mu = self.mean
